@@ -17,4 +17,4 @@ process = subprocess.Popen(
 for line in process.stdout:
     if line.strip() == "OSCQuery Service Opened":
         print("OSCQuery service opened.\nRunning Main OSC Application.")
-        subprocess.run(config["name"], shell = True)
+        subprocess.run(config["user_app_path"], shell = True)

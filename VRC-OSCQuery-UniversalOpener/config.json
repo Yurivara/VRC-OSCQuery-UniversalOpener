@@ -3,5 +3,6 @@
     "my/fancy/endpoint1",
     "my/fancy/endpoint2"
   ],
-  "name": "Enter Program Name Here"
+  "name": "Enter Program Name Here",
+  "user_app_path": "myapp.exe"
 }
