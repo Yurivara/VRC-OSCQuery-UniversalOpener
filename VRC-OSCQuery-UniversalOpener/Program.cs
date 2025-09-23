@@ -62,3 +62,11 @@ class Program
         }
     }   
 }
+
+
+/*
+ * Created by Yurivara on GitHub.
+ * https://www.cup0tea.online
+ * 
+ * This falls under the BSD-3-Clause License.
+ */

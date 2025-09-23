@@ -18,3 +18,10 @@ for line in process.stdout:
     if line.strip() == "OSCQuery Service Opened":
         print("OSCQuery service opened.\nRunning Main OSC Application.")
         subprocess.run(config["user_app_path"], shell = True)
+
+
+"""
+Created by Yurivara on GitHub.
+https://www.cup0tea.online 
+This falls under the BSD-3-Clause License.
+"""
