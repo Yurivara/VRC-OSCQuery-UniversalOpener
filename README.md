@@ -1,6 +1,6 @@
 # VRC-OSCQuery-UniversalOpener
 
-<u>**Instructions are found within the guide.**</u>
+<u>**Instructions are found within the Wiki page on this Repository.**</u>
 
 Any and all commercial use must have some form of accreditation to this source (for example, a link to this repository).
 
