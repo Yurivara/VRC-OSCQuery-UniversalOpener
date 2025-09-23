@@ -1,4 +1,4 @@
-# VRC-OSCQuery-UniversalOpener
+# VRC-OSCQuery-UniversalOpener (Under Development)
 
 <u>**Instructions are found within the Wiki page on this Repository.**</u>
 
