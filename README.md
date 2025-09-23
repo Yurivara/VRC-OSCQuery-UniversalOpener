@@ -1,6 +1,6 @@
 # VRC-OSCQuery-UniversalOpener
 
-**Instructions are found in guide.**
+::**Instructions are found in guide.**::
 
 This allows users to create and access endpoints for the VRChat OSCQuery service used to communicate over OSC to VRChat without having to use a router.
 
