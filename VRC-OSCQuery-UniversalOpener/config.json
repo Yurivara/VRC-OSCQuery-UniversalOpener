@@ -1,0 +1,7 @@
+{
+  "endpoints": [
+    "my/fancy/endpoint1",
+    "my/fancy/endpoint2"
+  ],
+  "name": "Enter Program Name Here"
+}
