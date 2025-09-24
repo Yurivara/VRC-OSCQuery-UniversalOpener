@@ -1,11 +1,10 @@
 ﻿using VRC.OSCQuery;
 using Newtonsoft.Json;
-//using Newtonsoft.Json.Linq;
 
 class Program
 {
     private static OSCQueryService? server;
-    void Main(string[] args)
+    static void Main(string[] args)
     {
         AppDomain.CurrentDomain.ProcessExit += new EventHandler(Currentdomain_ProcessExit);
         dynamic config = getConfig();
@@ -34,7 +33,7 @@ class Program
 
     }
 
-    private dynamic getConfig()
+    static private dynamic getConfig()
     {
         string path = "config.json";
         dynamic? obj = JsonConvert.DeserializeObject(path);
