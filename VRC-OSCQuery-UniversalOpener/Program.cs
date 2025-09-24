@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 class Program
 {
     private static OSCQueryService? server;
+    private static string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.json");
     static void Main(string[] args)
     {
         AppDomain.CurrentDomain.ProcessExit += new EventHandler(Currentdomain_ProcessExit);
