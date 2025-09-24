@@ -4,12 +4,29 @@ using System.Runtime.InteropServices;
 
 class Program
 {
+    public class Config
+    {
+        [JsonProperty("endpoints")]
+        public string[]? endpoints { get; set; }
+
+        [JsonProperty("name")]
+        public string? name { get; set; }
+
+        [JsonProperty("user_app_path")]
+        public string? user_app_path { get; set; }
+
+        [JsonProperty("tcpport")]
+        public int tcpport { get; set; }
+
+        [JsonProperty("udpport")]
+        public int udpport { get; set; }
+    }
     private static OSCQueryService? server;
     private static string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.json");
     static void Main(string[] args)
     {
         AppDomain.CurrentDomain.ProcessExit += new EventHandler(Currentdomain_ProcessExit);
-        dynamic config = getConfig();
+        var config = getConfig();
         var tcpport = Extensions.GetAvailableTcpPort();
         var udpport = Extensions.GetAvailableUdpPort();
         server = new OSCQueryServiceBuilder()
@@ -32,26 +49,15 @@ class Program
 
         Console.ReadKey();
         server.Dispose();
-
     }
 
-    static private dynamic getConfig()
+    private static Config getConfig()
     {
         string json = File.ReadAllText(configPath);
-        dynamic? obj = JsonConvert.DeserializeObject(json);
-        
-        if (obj == null)
-        {
-            obj = new
-            {
-                name = "VRC OSCQuery Service",
-                endpoints = new string[] { "/avatar/parameters/'tis-not-working" },
-                tcpport = 0,
-                udpport = 0
-            };
-        }
-        Console.WriteLine(obj);
-        return obj;
+        var result = JsonConvert.DeserializeObject<Config>(json);
+        if (result == null)
+            throw new InvalidOperationException("Failed to deserialize config.json.");
+        return result;
     }
 
     static void Currentdomain_ProcessExit(object? sender, EventArgs e)

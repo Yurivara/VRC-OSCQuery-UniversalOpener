@@ -4,5 +4,7 @@
     "my/fancy/endpoint2"
   ],
   "name": "Enter Program Name Here",
-  "user_app_path": "myapp.exe"
+  "user_app_path": "myapp.exe",
+  "tcpport": 9000,
+  "udpport": 9001
 }
