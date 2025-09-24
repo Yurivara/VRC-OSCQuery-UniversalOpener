@@ -1,5 +1,6 @@
 ﻿using VRC.OSCQuery;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices;
 
 class Program
 {
@@ -26,7 +27,7 @@ class Program
         config.tcpport = tcpport;
         config.udpport = udpport;
         string output = JsonConvert.SerializeObject(config, Formatting.Indented);
-        File.WriteAllText("config.json", output);
+        File.WriteAllText(configPath, output);
         Console.WriteLine("OSCQuery Service Opened");
 
         Console.ReadKey();
@@ -36,8 +37,8 @@ class Program
 
     static private dynamic getConfig()
     {
-        string path = "config.json";
-        dynamic? obj = JsonConvert.DeserializeObject(path);
+        string json = File.ReadAllText(configPath);
+        dynamic? obj = JsonConvert.DeserializeObject(json);
         
         if (obj == null)
         {
@@ -49,6 +50,7 @@ class Program
                 udpport = 0
             };
         }
+        Console.WriteLine(obj);
         return obj;
     }
 
